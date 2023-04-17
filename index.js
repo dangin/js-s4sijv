@@ -11,6 +11,8 @@ const count = 7;
 const offset = -1;
 const today = new Date(`${year}-${month}-${day}T00:00`);
 
+app.style.setProperty('--days', count);
+
 let days = [];
 for (let i = 0; i < count; i++) {
   let _d = new Date();
@@ -27,7 +29,6 @@ const dayNames = [
   'Saturday',
   'Sunday',
 ];
-calendar.style.setProperty('--days', count);
 
 days.forEach((d) => {
   let elem = document.createElement('div');
@@ -36,24 +37,18 @@ days.forEach((d) => {
   <div class="dayname">${dayNames[d.getDay()]}</div>
   `;
   elem.classList.add('day');
-  calendar.append(elem);
+  headers.append(elem);
 });
 
 const highlightDate = (e, _bool) => {
   let column = parseInt(
-    getComputedStyle(e.target.closest('.event')).gridRow.split('/')[0]
+    getComputedStyle(e.target.closest('.event')).gridColumn.split('/')[0]
   );
-  let elem = document.querySelector(`.day:nth-child(${column - 1})`);
+  let elem = document.querySelector(`.day:nth-child(${column})`);
   if (elem) {
     elem.classList.toggle('highlight', _bool);
   }
 };
-const undoHighlightDate = (e) => {
-  let column = getComputedStyle(e.target).gridRow.split('/')[0];
-  let elem = document.querySelector(`.day:nth-child(${column - 1})`);
-  elem.classList.remove('highlight');
-};
-
 document.querySelectorAll('.event').forEach((elem) => {
   console.log(elem.style.column);
   elem.addEventListener('mouseover', (e) => {

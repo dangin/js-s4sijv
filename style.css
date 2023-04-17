@@ -2,17 +2,24 @@ body {
   margin: 0;
   padding: 0;
 }
-
+#app {
+  --days: 7;
+  display: grid;
+  height: 100vh;
+  grid-template-rows: min-content 1fr min-content;
+}
 #calendar {
   display: grid;
   grid-template-columns: repeat(var(--days), 1fr);
   grid-template-rows: 3fr repeat(48, 1fr);
-  height: 100vh;
   background: #222;
-  --days: 7;
 }
-
-#calendar .day {
+#headers {
+  display: grid;
+  grid-template-columns: repeat(var(--days), 1fr);
+  background: #111;
+}
+#app .day {
   font-size: 2em;
   border-bottom: 1px solid white;
   padding: 0.5em 0;
@@ -25,8 +32,8 @@ body {
   font-family: monospace;
 }
 
-#calendar .dayname,
-#calendar .date {
+#app .dayname,
+#app .date {
   text-align: center;
   text-transform: uppercase;
   font-family: monospace;
@@ -38,7 +45,7 @@ body {
   margin: auto;
 }
 
-#calendar .dayname {
+#app .dayname {
   width: 3ch;
   font-size: 1em;
   color: #666;
@@ -46,6 +53,7 @@ body {
 #event_id_1 {
   grid-column: 3;
   grid-row: 5 / span 5;
+  z-index: 2;
 }
 
 .raid {
@@ -63,4 +71,20 @@ body {
 
 .highlight {
   background-color: white;
+}
+.past-day,
+.past-day2 {
+  background-color: black;
+  z-index: 1;
+  grid-column: 1;
+  grid-row: 1/-1;
+}
+.past-day2 {
+  grid-column: 2;
+}
+.past-time {
+  background-color: black;
+  z-index: 1;
+  grid-column: 3;
+  grid-row: 1/8;
 }
