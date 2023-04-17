@@ -11,7 +11,7 @@ body {
 #calendar {
   display: grid;
   grid-template-columns: repeat(var(--days), 1fr);
-  grid-template-rows: 3fr repeat(48, 1fr);
+  grid-template-rows: repeat(48, 1fr);
   background: #222;
 }
 #headers {
@@ -30,6 +30,12 @@ body {
   box-sizing: border-box;
   text-align: center;
   font-family: monospace;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
 }
 
 #app .dayname,
@@ -52,12 +58,11 @@ body {
 }
 #event_id_1 {
   grid-column: 3;
-  grid-row: 5 / span 5;
-  z-index: 2;
+  grid-row: 5 / span 4;
 }
 
 .raid {
-  font-size: 2em;
+  font-size: 1.5em;
   background-color: #444;
   color: white;
   font-weight: bold;
