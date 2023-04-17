@@ -1,3 +1,44 @@
-h1, h2 {
-  font-family: Lato;
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#calendar {
+  display: grid;
+  grid-template-columns: repeat(var(--days), 1fr);
+  grid-template-rows: 3fr repeat(48, 1fr);
+  height: 100vh;
+  background: #222;
+  --days: 7;
+}
+
+#calendar .day {
+  font-size: 2em;
+  border-bottom: 1px solid white;
+}
+#calendar .event {
+  border: 1px solid black;
+  box-sizing: border-box;
+}
+
+#calendar .dayname,
+#calendar .date {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: monospace;
+  width: 2ch;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5em;
+  overflow: hidden;
+  margin: auto;
+}
+
+#calendar .dayname {
+  width: 3ch;
+  font-size: 1em;
+}
+#event_id_1 {
+  grid-column: 3;
+  grid-row: 5 / span 5;
 }
