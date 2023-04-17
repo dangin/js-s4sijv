@@ -93,3 +93,7 @@ body {
   grid-column: 3;
   grid-row: 1/8;
 }
+.raid.ulduar {
+  background-image: url('./img/ulduar.jpg');
+  background-size: cover;
+}

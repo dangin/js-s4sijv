@@ -82,7 +82,7 @@ events.forEach((e) => {
     <div class="event" style="border-width:3px;border-color:${
       classColors[e.character.class]
     }">
-      <div class="raid">${e.raid} ${e.raidSize}</div>
+      <div class="raid ${e.raid.toLowerCase()}">${e.raid} ${e.raidSize}</div>
       <div class="${e.character.class.toLowerCase()}">
         <span class="characterName">${e.character.name}</span>
       </div>
