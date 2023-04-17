@@ -79,7 +79,7 @@ events.forEach((e) => {
   elem.style.zIndex = '2';
   elem.style.position = 'relative';
   elem.innerHTML = `
-    <div class="event" style="border-width:3px;border-color:${
+    <div class="event" style="border-top:15px solid;border-color: ${
       classColors[e.character.class]
     }">
       <div class="raid ${e.raid.toLowerCase()}">${e.raid} ${e.raidSize}</div>

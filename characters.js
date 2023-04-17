@@ -15,4 +15,24 @@ export const characters = {
     name: 'Nalliah',
     class: 'Rogue',
   },
+  Nalm: {
+    name: 'Nalm',
+    class: 'Mage',
+  },
+  Nallm: {
+    name: 'Nallm',
+    class: 'Mage',
+  },
+  Nallya: {
+    name: 'Nallya',
+    class: 'Druid',
+  },
+  Nallyah: {
+    name: 'Nallyah',
+    class: 'Druid',
+  },
+  Nalp: {
+    name: 'Nalp',
+    class: 'Priest',
+  },
 };

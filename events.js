@@ -20,3 +20,13 @@ events.push({
   time: '13:00',
   duration: 5,
 });
+
+events.push({
+  id: '_' + crypto.randomUUID(),
+  character: characters.Nalm,
+  raid: 'Naxx',
+  raidSize: 10,
+  date: '2023-04-20',
+  time: '13:00',
+  duration: 5,
+});

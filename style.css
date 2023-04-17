@@ -97,3 +97,8 @@ body {
   background-image: url('./img/ulduar.jpg');
   background-size: cover;
 }
+
+.raid.naxx {
+  background-image: url('./img/naxx.jpg');
+  background-size: cover;
+}
