@@ -15,10 +15,14 @@ body {
 #calendar .day {
   font-size: 2em;
   border-bottom: 1px solid white;
+  padding: 0.5em 0;
 }
 #calendar .event {
-  border: 1px solid black;
+  border: 1px solid white;
+  background-color: rgba(255, 255, 255, 0.3);
   box-sizing: border-box;
+  text-align: center;
+  font-family: monospace;
 }
 
 #calendar .dayname,
@@ -27,7 +31,7 @@ body {
   text-transform: uppercase;
   font-family: monospace;
   width: 2ch;
-  color: white;
+  color: #999;
   font-weight: bold;
   font-size: 1.5em;
   overflow: hidden;
@@ -37,8 +41,26 @@ body {
 #calendar .dayname {
   width: 3ch;
   font-size: 1em;
+  color: #666;
 }
 #event_id_1 {
   grid-column: 3;
   grid-row: 5 / span 5;
+}
+
+.raid {
+  font-size: 2em;
+  background-color: #444;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.rogue {
+  color: yellow;
+}
+.characterName {
+}
+
+.highlight {
+  background-color: white;
 }

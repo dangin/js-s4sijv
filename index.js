@@ -38,3 +38,28 @@ days.forEach((d) => {
   elem.classList.add('day');
   calendar.append(elem);
 });
+
+const highlightDate = (e, _bool) => {
+  let column = parseInt(
+    getComputedStyle(e.target.closest('.event')).gridRow.split('/')[0]
+  );
+  let elem = document.querySelector(`.day:nth-child(${column - 1})`);
+  if (elem) {
+    elem.classList.toggle('highlight', _bool);
+  }
+};
+const undoHighlightDate = (e) => {
+  let column = getComputedStyle(e.target).gridRow.split('/')[0];
+  let elem = document.querySelector(`.day:nth-child(${column - 1})`);
+  elem.classList.remove('highlight');
+};
+
+document.querySelectorAll('.event').forEach((elem) => {
+  console.log(elem.style.column);
+  elem.addEventListener('mouseover', (e) => {
+    highlightDate(e, true);
+  });
+  elem.addEventListener('mouseleave', (e) => {
+    highlightDate(e, false);
+  });
+});
